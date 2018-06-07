@@ -5,9 +5,11 @@
         <meta charset="utf-8">
         <meta name="vi">
         <title>Health Map</title>
+	<link rel="stylesheet" href="css/style.css">
+	
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <nav class="navbar navbar-expand-md navbar-light bg-light box-shadow">
            <a href="index.html" class="nav-brand">
                <h4 style="font-family: ubuntu"><span style="color: red">HEALTH</span>MAP</h4>
            </a>
@@ -27,17 +29,39 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="btn btn-outline-primary ml-md-2">
-                        Login</a>
+                        Sign up</a>
                     </li>
                 </ul>
             </div>
+
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
         </nav>
         
-        
+        <section class="container-fluid">
+		<div class="row bg-primary text-white">
+			<div class="col-7"></div>
+			<div class="col-5">
+			<form>
+			  <div class="form-group form-style">
+			    <label for="exampleInputEmail1">Email address</label>
+			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+			    
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Password</label>
+			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			  </div>
+			  <div class="form-group form-check">
+			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+			  </div>
+			  <button type="submit" class="btn btn-danger">Submit</button>
+		</form>			
+		</div>
+	</section>
         
         
         
