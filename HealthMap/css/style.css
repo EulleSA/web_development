@@ -13,3 +13,10 @@
                0 4px 8px 0 rgba(0,0,0,.05);
     width: 350px;
 }
+
+
+#rodape{
+    background-color: rgba(15, 14, 12, 0.596);
+    width: auto;
+    height: 100%;
+}
