@@ -1,5 +1,5 @@
 <?php
-$con = mysql_connect("127.0.0.1:3307", "root", "sip12e12");
+$con = mysql_connect("localhost", "root", "");
 if(!$con)
 	die("Problema ao estabelecer conexão com o banco de dados: ". mysql_error());
 
