@@ -117,7 +117,15 @@
                     </select>
                 </form>
             </div>
+       
         </div>
+
+        <div class="row">
+                <div class="col-12">
+                        <div id="map"></div>
+                        
+                </div>
+            </div>
     </section>
 
     <section class="container" id="about">
@@ -144,22 +152,30 @@
     </section>
 
 
-    <section class="container-fluid" id="team">
+    <section class="container" id="team">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center">DESENVOLVEDORES</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-
+            <div class="col-4 text-center">
+                    <img src="images/eulle.jpg" alt="..." class="rounded">
+                    <p class="lead"><strong>Desenvolvedor Web</strong></p>
             </div>
+            <div class="col-4 text-center">
+                    <img src="..." alt="..." class="rounded-circle">
+            </div>
+            <div class="col-4 text-center">
+                    <img src="..." alt="..." class="rounded-circle">
+            </div>
+
         </div>
     </section>
 
     <footer class="container-fluid" id="rodape" >
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center text-white">
                     <h1>Copyrights@2018</h1>
             </div>
             
@@ -167,9 +183,8 @@
        
     </footer>
 
-
-
-
+    <script type="text/javascript" src="js/mapa.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1NhB48ULi3LoVJiqtTnzXEwZhz-jM7u0&callback=initMap"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
