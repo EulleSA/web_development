@@ -1,0 +1,18 @@
+	{
+		"numRegistro": 1,
+		"dataInicial": "2018-05-05",
+		"dataFinal": "2018-06-16",
+		"idUnidadeHospitalar": 1,
+		"matriculaUnidadeHospitalar": 201801,
+		"nsus": 123456789012345,
+		"idDoenca": 2
+	}
+	{
+		"numRegistro": 2,
+		"dataInicial": "2018-05-05",
+		"dataFinal": "2018-06-10",
+		"idUnidadeHospitalar": 1,
+		"matriculaUnidadeHospitalar": 201801,
+		"nsus": 543210987654321,
+		"idDoenca": 2
+	}
