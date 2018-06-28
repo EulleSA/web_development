@@ -44,27 +44,22 @@
                             fwrite($myfile, $txt);
                             fclose($myfile);
                             
-                            //$validation = "";
-                            $output = exec("node mongo.js");
-                            print_r($output);
-                            //echo implode("\n", $validation);
+                            $output = exec("/usr/local/bin/node mongo.js");
+                            if ($output == "1 document inserted"){
+                                echo "<script type='text/javascript'>
+                                        alert('Cadastro feito com sucesso!');
+                                        window.location='registro_caso_doenca.php';
+                                    </script>";
+                            }
+                            else{
+                                echo "<script type='text/javascript'>
+                                        alert('Ocorreu um erro! Não foi possível efetuar o cadastro. Por favor, tente novamente.');
+                                        window.location='registro_caso_doenca.php';
+                                    </script>";
+                            }
+
+                            mysql_close($con);
                         ?>
-
-                        <!-- <script>
-                            var MongoClient = require('mongodb').MongoClient;
-                            var url = "mongodb://localhost:27017/";
-
-                            MongoClient.connect(url, function(err, db) {
-                            if (err) throw err;
-                            var dbo = db.db("mydb");
-                            var myobj = { name: "Company Inc", address: "Highway 37" };
-                            dbo.collection("customers").insertOne(myobj, function(err, res) {
-                                if (err) throw err;
-                                console.log("1 document inserted");
-                                db.close();
-                            });
-                            });
-                        </script> -->
                     </div>
                 </div>
             </div>

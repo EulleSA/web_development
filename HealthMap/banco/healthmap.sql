@@ -65,16 +65,16 @@ CREATE TABLE usuario_hospital(
 );
 
 CREATE TABLE usuario_comum(
-	nsus INT UNIQUE NOT NULL,
+	nsus BIGINT UNIQUE NOT NULL,
 	cpf VARCHAR(11) NOT NULL,
 	FOREIGN KEY(cpf) REFERENCES usuario(cpf),
 	PRIMARY KEY(nsus, cpf)
 );
 
 CREATE TABLE usuario_dependente(
-	nsus INT NOT NULL,
+	nsus BIGINT UNIQUE NOT NULL,
 	cpf VARCHAR(11) NOT NULL,
-	nsus_responsavel INT NOT NULL,
+	nsus_responsavel BIGINT NOT NULL,
 	parentesco VARCHAR(50) NOT NULL,
 	FOREIGN KEY(cpf) REFERENCES usuario(cpf),
 	FOREIGN KEY(nsus_responsavel) REFERENCES usuario_comum(nsus),
@@ -85,7 +85,7 @@ CREATE TABLE usuario_dependente(
 INSERT INTO doenca VALUES (1, "Gripe", "Infecciosa");
 INSERT INTO doenca VALUES (2, "Sarampo", "Infecciosa");
 INSERT INTO doenca VALUES (3, "Virus Zika", "Infecciosa");
-INSERT INTO doenca VALUES (4, "Varíola", "Infecciosa");
+INSERT INTO doenca VALUES (4, "Variola", "Infecciosa");
 
 INSERT INTO endereco VALUES (59151250, "Avenida Abel Cabral", "Nova Parnamirim", "Parnamirim", "Rio Grande do Norte");
 INSERT INTO endereco VALUES (59150260, "Rua das Patativas", "Nova Parnamirim", "Parnamirim", "Rio Grande do Norte");
