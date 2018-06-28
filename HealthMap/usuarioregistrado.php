@@ -38,7 +38,11 @@
                             $nsus = $_POST['nsus'];
 
                             $usuario = "INSERT INTO usuario VALUES ('$cpf', '$login', '$senha', '$nome', '$data', $sexo, $telefone)";
-                            $endereco = "INSERT INTO endereco VALUES ($cep, '$rua', '$bairro', '$cidade', '$estado')";
+                            $endereco = "INSERT INTO endereco (cep, rua, bairro, cidade, estado) 
+                                         SELECT * FROM (SELECT $cep, '$rua', '$bairro', '$cidade', '$estado') AS tmp 
+                                         WHERE NOT EXISTS(
+                                            SELECT cep, rua, bairro FROM endereco WHERE cep = $cep AND rua = '$rua' AND bairro='$bairro'
+                                         )LIMIT 1";
                             $enderecousuario = "INSERT INTO endereco_usuario VALUES ('$cpf', $cep, '$numero', '$complemento')";
                             $usuario_comum = "INSERT INTO usuario_comum VALUES ($nsus, '$cpf')";
 

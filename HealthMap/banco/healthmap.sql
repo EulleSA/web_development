@@ -84,15 +84,15 @@ CREATE TABLE usuario_dependente(
 -- https://pt.wikipedia.org/wiki/Categoria:Doenças
 INSERT INTO doenca VALUES (1, "Gripe", "Infecciosa");
 INSERT INTO doenca VALUES (2, "Sarampo", "Infecciosa");
-INSERT INTO doenca VALUES (3, "Vírus Zika", "Infecciosa");
+INSERT INTO doenca VALUES (3, "Virus Zika", "Infecciosa");
 INSERT INTO doenca VALUES (4, "Varíola", "Infecciosa");
 
 INSERT INTO endereco VALUES (59151250, "Avenida Abel Cabral", "Nova Parnamirim", "Parnamirim", "Rio Grande do Norte");
 INSERT INTO endereco VALUES (59150260, "Rua das Patativas", "Nova Parnamirim", "Parnamirim", "Rio Grande do Norte");
 
-INSERT INTO unidade_hospitalar VALUES (1, "Centro de Saúde Suzete Cavalcanti");
+INSERT INTO unidade_hospitalar VALUES (1, "Centro de Saude Suzete Cavalcanti");
 
-INSERT INTO endereco_unidade_hospitalar values (1, 59150260, "s/n", "Em frente à quadra");
+INSERT INTO endereco_unidade_hospitalar values (1, 59150260, "s/n", "Em frente a quadra");
 
 INSERT INTO usuario VALUES ("00000000001", "user", "senha", "Marcos", "1990-12-12", 0, 999999999);
 INSERT INTO usuario VALUES ("00000000002", "userhospital", "senha", "Maria", "1985-11-05", 1, 999999998);

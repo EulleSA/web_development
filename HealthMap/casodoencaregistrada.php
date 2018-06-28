@@ -19,30 +19,52 @@
                         
                         <?php
 
-                            // include('conexao.php');
-                            // $doenca = substr($_POST['doenca'], 0, 1);
-                            // $nsus = $_POST['nsus'];
-                            // $unidade = substr($_POST['unidade'], 0, 1);
-                            // $matricula = $_POST['matricula'];
-                            // $datainicial = $_POST['datainicial'];
-                            // $datafinal = $_POST['datafinal'];
+                            include('conexao.php');
+                            $doenca = substr($_POST['doenca'], 0, 1);
+                            $nsus = $_POST['nsus'];
+                            $unidade = substr($_POST['unidade'], 0, 1);
+                            $matricula = $_POST['matricula'];
+                            $datainicial = $_POST['datainicial'];
+                            $datafinal = $_POST['datafinal'];
 
-                            // echo $doenca . "<br/>" . $nsus . "<br/>" . $unidade . "<br/>" . $matricula . "<br/>" . $datainicial . "<br/>" . $datafinal;
+                            $myfile = fopen("mongo.js", "w") or die("Unable to open file!");
+                            $txt = "var MongoClient = require('mongodb').MongoClient;
+                            var url = 'mongodb://localhost:27017/';
 
-                            // mysql_close($con);
+                            MongoClient.connect(url, function(err, db) {
+                            if (err) throw err;
+                            var dbo = db.db('healthmap');
+                            var myobj = { dataInicial: '$datainicial', dataFinal : '$datafinal', idUnidadeHospitalar: $unidade, matriculaUnidadeHospitalar: $matricula, nsus: $nsus, idDoenca: $doenca };
+                            dbo.collection('healthmap').insertOne(myobj, function(err, res) {
+                                if (err) throw err;
+                                console.log('1 document inserted');
+                                db.close();
+                            });
+                            });";
+                            fwrite($myfile, $txt);
+                            fclose($myfile);
                             
-                            // connect to mongodb
-                            $m = new MongoDB\Driver\Manage("mongodb://localhost:27017");
-                            echo "Connection to database successfully";
-                                
-                            // select a database
-                            // $db = $m->mydb;
-                            // echo "Database mydb selected";
-                            // $collection = $db->createCollection("mycol");
-                            // echo "Collection created succsessfully";
-                        
+                            //$validation = "";
+                            $output = exec("node mongo.js");
+                            print_r($output);
+                            //echo implode("\n", $validation);
                         ?>
 
+                        <!-- <script>
+                            var MongoClient = require('mongodb').MongoClient;
+                            var url = "mongodb://localhost:27017/";
+
+                            MongoClient.connect(url, function(err, db) {
+                            if (err) throw err;
+                            var dbo = db.db("mydb");
+                            var myobj = { name: "Company Inc", address: "Highway 37" };
+                            dbo.collection("customers").insertOne(myobj, function(err, res) {
+                                if (err) throw err;
+                                console.log("1 document inserted");
+                                db.close();
+                            });
+                            });
+                        </script> -->
                     </div>
                 </div>
             </div>

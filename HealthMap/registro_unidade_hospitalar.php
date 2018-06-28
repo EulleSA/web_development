@@ -23,6 +23,41 @@
                                 <label for="nome">Nome:</label>
                                 <input type="text" class="form-control" name="nome">
                             </div>
+
+                            <div class="form-group">
+                                <label for="cep">CEP:</label>
+                                <input type="number" class="form-control" name="cep">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rua">Rua:</label>
+                                <input type="text" class="form-control" name="rua">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bairro">Bairro:</label>
+                                <input type="text" class="form-control" name="bairro">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cidade">Cidade:</label>
+                                <input type="text" class="form-control" name="cidade">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="estado">Estado:</label>
+                                <input type="text" class="form-control" name="estado">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="numero">Número:</label>
+                                <input type="number" class="form-control" name="numero">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="complemento">Complemento:</label>
+                                <input type="text" class="form-control" name="complemento">
+                            </div>
                                    
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                             <a href="dashboard.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
