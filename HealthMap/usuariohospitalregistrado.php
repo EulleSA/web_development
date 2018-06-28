@@ -16,7 +16,7 @@
             <div style="width:400px;margin:auto">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="text-center"><span style="color: red">CADAS</span><span style="color:mediumblue">TRO</span> <span style="color: red">USUA</span><span style="color:mediumblue">RIO</span></h4>
+                        <h4 class="text-center"><span style="color: red">CADAS</span><span style="color:mediumblue">TRO</span> <span style="color: red">USUA</span><span style="color:mediumblue">RIO HOSPITAL</span></h4>
                         
                         <?php
 
@@ -35,28 +35,32 @@
                             $estado = $_POST['estado'];
                             $numero = $_POST['numero'];
                             $complemento = $_POST['complemento'];
-                            $nsus = $_POST['nsus'];
+                            $matricula = $_POST['matricula'];
+                            $unidade = substr($_POST['unidade'], 0, 1);
 
                             $usuario = "INSERT INTO usuario VALUES ('$cpf', '$login', '$senha', '$nome', '$data', $sexo, $telefone)";
-                            $endereco = "INSERT INTO endereco VALUES ($cep, '$rua', '$bairro', '$cidade', '$estado')";
+                            $endereco = "INSERT INTO endereco (cep, rua, bairro, cidade, estado) 
+                                         SELECT * FROM (SELECT $cep, '$rua', '$bairro', '$cidade', '$estado') AS tmp 
+                                         WHERE NOT EXISTS(
+                                            SELECT cep, rua, bairro FROM endereco WHERE cep = $cep AND rua = '$rua' AND bairro='$bairro'
+                                         )LIMIT 1";
                             $enderecousuario = "INSERT INTO endereco_usuario VALUES ('$cpf', $cep, '$numero', '$complemento')";
-                            $usuario_comum = "INSERT INTO usuario_comum VALUES ($nsus, '$cpf')";
+                            $usuario_hospital = "INSERT INTO usuario_hospital VALUES ($matricula, '$cpf', $unidade)";
 
                             $insertUsuario = mysql_query($usuario);
                             $insertEndereco = mysql_query($endereco);
                             $insertEnderecoUsuario = mysql_query($enderecousuario);
-                            $insertUsuarioComum = mysql_query($usuario_comum);
+                            $insertUsuarioHospital = mysql_query($usuario_hospital);
 
-                            if($insertUsuario && $insertEndereco && $insertEnderecoUsuario && $insertUsuarioComum){
+                            if($insertUsuario && $insertEndereco && $insertEnderecoUsuario && $insertUsuarioHospital){
                                 echo "<script type='text/javascript'>
                                         alert('Cadastro feito com sucesso!');
-                                        window.location='registro_usuario.php';
+                                        window.location='registro_usuario_hospital.php';
                                     </script>";
-                            }
-                            else{
+                            }else{
                                 echo "<script type='text/javascript'>
                                         alert('Ocorreu um erro! Não foi possível efetuar o cadastro. Por favor, tente novamente.');
-                                        window.location='registro_usuario.php';
+                                        window.location='registro_usuario_hospital.php';
                                     </script>";
                             }
 

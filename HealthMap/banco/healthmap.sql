@@ -19,8 +19,8 @@ CREATE TABLE endereco(
 );
 
 CREATE TABLE unidade_hospitalar(
-	id INT NOT NULL,
-	nome VARCHAR(50) NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(50) UNIQUE NOT NULL,
 	PRIMARY KEY(id)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE usuario_hospital(
 );
 
 CREATE TABLE usuario_comum(
-	nsus INT NOT NULL,
+	nsus INT UNIQUE NOT NULL,
 	cpf VARCHAR(11) NOT NULL,
 	FOREIGN KEY(cpf) REFERENCES usuario(cpf),
 	PRIMARY KEY(nsus, cpf)
@@ -107,9 +107,6 @@ INSERT INTO usuario_hospital VALUES (201801, "00000000002", 1);
 INSERT INTO usuario_comum VALUES (123456789012345, "00000000001");
 
 INSERT INTO usuario_dependente VALUES (543210987654321, "00000000003", 123456789012345, "Filho");
-
-
-
 
 
 

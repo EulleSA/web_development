@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Healthmap</title>
@@ -15,15 +16,17 @@
             <div style="width:400px;margin:auto">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="text-center"><span style="color: red">HEALTH</span><span style="color:mediumblue">MAP</span></h4>
-                        Seja bem-vindo, <?php echo "$logado!"; ?><a href="logout.php"><br/><br/>
-                        <button type="button" class="btn btn-primary">Sair</button></a><br/><br/>
-
-                        <a href="registro_unidade_hospitalar.php"><button type="button" class="btn btn-primary">Cadastrar Unidade Hospitalar</button></a><br/>
-                        <a href="registro_usuario_hospital.php"><button type="button" class="btn btn-danger">Cadastrar Usuário Hospital</button></a><br/>
-                        <a href="registro_doenca.php"><button type="button" class="btn btn-primary">Cadastrar Doença</button></a><br/>
-                        <a href="registro_caso_doenca.php"><button type="button" class="btn btn-danger">Cadastrar Caso de Doença</button></a><br/>
-
+                        <h4 class="text-center"><span style="color: red">CADAS</span><span style="color:mediumblue">TRO</span> <span style="color: red">UNIDADE</span><span style="color:mediumblue">HOSPITALAR</span></h4>
+                        <form action="unidaderegistrada.php" method="POST">
+                        
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" class="form-control" name="nome">
+                            </div>
+                                   
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <a href="dashboard.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                        </form>
                     </div>
                 </div>
             </div>

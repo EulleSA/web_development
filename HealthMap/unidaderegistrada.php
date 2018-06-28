@@ -15,28 +15,25 @@
             <div style="width:400px;margin:auto">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="text-center"><span style="color: red">CADAS</span><span style="color:mediumblue">TRO</span> <span style="color: red">USUA</span><span style="color:mediumblue">RIO</span></h4>
+                        <h4 class="text-center"><span style="color: red">CADAS</span><span style="color:mediumblue">TRO</span> <span style="color: red">UNIDADE</span><span style="color:mediumblue">HOSPITALAR</span></h4>
                         
                         <?php
-
                             include('conexao.php');
                             $nome = $_POST['nome'];
-                            $categoria = $_POST['categoria'];
 
-                            $doenca = "INSERT INTO doenca VALUES ('', '$nome', '$categoria')";
+                            $unidade = "INSERT INTO unidade_hospitalar VALUES ('', '$nome')";
 
-                            $insertDoenca = mysql_query($doenca);
+                            $insertUnidade = mysql_query($unidade);
 
-                            if($insertDoenca){
+                            if($insertUnidade){
                                 echo "<script type='text/javascript'>
                                         alert('Cadastro feito com sucesso!');
-                                        window.location='registro_doenca.php';
+                                        window.location='registro_unidade_hospitalar.php';
                                     </script>";
-                            }
-                            else{
+                            }else{
                                 echo "<script type='text/javascript'>
                                         alert('Ocorreu um erro! Não foi possível efetuar o cadastro. Por favor, tente novamente.');
-                                        window.location='registro_doenca.php';
+                                        window.location='registro_unidade_hospitalar.php';
                                     </script>";
                             }
 
